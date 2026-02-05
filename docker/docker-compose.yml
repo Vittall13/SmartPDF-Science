@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  smartpdf-ui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: smartpdf-gradio
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./input_pdfs:/app/input_pdfs
+      - ./output:/app/output
+      - model-cache:/app/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - PADDLE_USE_CUDNN=0
+    command: python3 src/smartpdf/ui/gradio_app.py
+
+  smartpdf-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: smartpdf-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./input_pdfs:/app/input_pdfs
+      - ./output:/app/output
+      - model-cache:/app/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - PADDLE_USE_CUDNN=0
+    command: python3 src/smartpdf/api/fastapi_app.py
+
+volumes:
+  model-cache:
