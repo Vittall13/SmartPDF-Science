@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartpdf-science"
+version = "0.1.0"
+description = "AI-powered PDF to DOCX/LaTeX/Markdown converter with GPU acceleration"
+authors = [{name = "Vitall_R", email = ""}]
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+keywords = ["pdf", "ocr", "latex", "markdown", "ai", "gpu", "scientific"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.urls]
+Homepage = "https://github.com/Vittall13/SmartPDF-Science"
+Repository = "https://github.com/Vittall13/SmartPDF-Science"
+Issues = "https://github.com/Vittall13/SmartPDF-Science/issues"
+
+[project.scripts]
+smartpdf = "smartpdf.cli:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=src/smartpdf --cov-report=html --cov-report=term"
