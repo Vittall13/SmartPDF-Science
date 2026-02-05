@@ -1,0 +1,42 @@
+# SmartPDF-Science Configuration
+
+# OCR Settings
+ocr:
+  device: "gpu:0"  # gpu:0, cpu
+  use_layout_detection: true
+  use_formula_recognition: true
+  formula_model: "PP-FormulaNet_plus-L"  # Best accuracy
+  use_doc_orientation_classify: true
+  use_doc_unwarping: false  # Slower but handles curved documents
+
+# Filtering Settings
+filter:
+  min_area: 5000        # Minimum bbox area in pixels²
+  min_text_len: 15      # Minimum text length in characters
+  min_score: 0.65       # Minimum confidence score
+
+# LLM Settings
+llm:
+  model_name: "Qwen/Qwen3-8B"
+  device: "cuda"
+  load_in_4bit: false   # Enable to save VRAM (8GB → 4GB)
+  correction_mode: "auto"  # auto, thinking, non-thinking, off
+
+# Output Settings
+output:
+  default_format: "docx"  # docx, md, tex, html
+  save_images: true
+  image_quality: 92
+
+# Performance
+performance:
+  batch_size: 1
+  num_workers: 2
+  cache_enabled: true
+  cache_dir: ".cache"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "smartpdf.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
