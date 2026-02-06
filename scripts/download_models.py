@@ -27,14 +27,14 @@ def download_paddleocr_models():
         device="gpu:0" if os.environ.get("CUDA_VISIBLE_DEVICES") else "cpu"
     )
     
-    logger.info("✅ PaddleOCR models ready!")
+    logger.info(" PaddleOCR models ready!")
     return vl
 
 
 def download_qwen_model():
     """Download Qwen3-8B model."""
     logger.info("Downloading Qwen3-8B model...")
-    logger.info("⚠️  This will download ~16GB and may take a while...")
+    logger.info("  This will download ~16GB and may take a while...")
     
     from transformers import AutoModelForCausalLM, AutoTokenizer
     
@@ -55,7 +55,7 @@ def download_qwen_model():
         torch_dtype="auto"
     )
     
-    logger.info("✅ Qwen3-8B model ready!")
+    logger.info(" Qwen3-8B model ready!")
     return model, tokenizer
 
 
@@ -78,20 +78,20 @@ def main():
     
     # Ask about Qwen3
     logger.info("[2/2] Qwen3-8B Model (optional, for text correction)")
-    response = input("🤖 Download Qwen3-8B (~16GB)? This enables AI text correction. [y/N]: ")
+    response = input(" Download Qwen3-8B (~16GB)? This enables AI text correction. [y/N]: ")
     
     if response.lower() in ['y', 'yes']:
         try:
             download_qwen_model()
         except Exception as e:
             logger.error(f"Failed to download Qwen3 model: {e}")
-            logger.info("⚠️  You can still use the app without LLM correction")
+            logger.info("  You can still use the app without LLM correction")
     else:
-        logger.info("⏭️  Skipping Qwen3-8B. You can download it later if needed.")
+        logger.info("⏭  Skipping Qwen3-8B. You can download it later if needed.")
     
     logger.info("")
     logger.info("="*50)
-    logger.info("✅ Model download completed!")
+    logger.info("Model download completed!")
     logger.info("="*50)
     logger.info("")
     logger.info("You can now run:")

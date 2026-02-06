@@ -32,7 +32,7 @@ def main():
     
     # Initialize LLM corrector
     print("[2/4] Loading Qwen3-8B for text correction...")
-    print("⚠️  This will use ~8GB VRAM")
+    print("This will use ~8GB VRAM")
     corrector = Qwen3Corrector(
         model_name=config.get("llm.model_name"),
         device=config.get("llm.device"),
@@ -44,7 +44,7 @@ def main():
     pdf_path = "input_pdfs/sample.pdf"
     
     if not Path(pdf_path).exists():
-        print(f"❌ Error: {pdf_path} not found")
+        print(f"Error: {pdf_path} not found")
         return
     
     print(f"[3/4] Processing: {pdf_path}")
@@ -84,7 +84,7 @@ def main():
     
     print()
     print("=" * 50)
-    print("✅ Done! All formats saved to output/")
+    print("Done! All formats saved to output/")
     print("=" * 50)
 
 

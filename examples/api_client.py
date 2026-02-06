@@ -65,22 +65,22 @@ def main():
     if response.status_code == 200:
         print("✓ API is running\n")
     else:
-        print("❌ API not available. Start it with: ./scripts/run_api.sh")
+        print("API not available. Start it with: ./scripts/run_api.sh")
         return
     
     # Convert PDF
     pdf_path = "input_pdfs/sample.pdf"
     
     if not Path(pdf_path).exists():
-        print(f"❌ {pdf_path} not found")
+        print(f"{pdf_path} not found")
         return
     
     try:
         output_path = convert_pdf(pdf_path, output_format="docx")
-        print(f"\n✅ Conversion successful!")
+        print(f"\nConversion successful!")
         print(f"Output: {output_path}")
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\nError: {e}")
 
 
 if __name__ == "__main__":

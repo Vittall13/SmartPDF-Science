@@ -25,7 +25,7 @@ if command -v nvidia-smi &> /dev/null; then
     nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader
     echo "✓ CUDA available"
 else
-    echo "⚠️  WARNING: nvidia-smi not found. GPU may not be available."
+    echo "  WARNING: nvidia-smi not found. GPU may not be available."
 fi
 
 # Create virtual environment
@@ -78,7 +78,7 @@ python3 -c "import paddle; print(f'Paddle version: {paddle.__version__}'); print
 
 echo ""
 echo "=================================="
-echo "✅ Setup completed successfully!"
+echo "Setup completed successfully!"
 echo "=================================="
 echo ""
 echo "Next steps:"

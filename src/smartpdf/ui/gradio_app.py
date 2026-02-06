@@ -70,17 +70,17 @@ def process_pdf(
         progress(1.0, desc="Done!")
         
         stats = (
-            f"📄 Pages: {result['pages']} | "
-            f"🖼️ Images: {result['images']} | "
-            f"🔢 Formulas: {result['formulas']} | "
-            f"⏱️ Time: {result['processing_time']:.1f}s"
+            f"Pages: {result['pages']} | "
+            f"Images: {result['images']} | "
+            f"Formulas: {result['formulas']} | "
+            f"⏱Time: {result['processing_time']:.1f}s"
         )
         
         return output_path, stats, markdown_text
     
     except Exception as e:
         logger.exception("Error processing PDF")
-        return None, f"❌ Error: {str(e)}", ""
+        return None, f" Error: {str(e)}", ""
 
 
 def create_ui():
@@ -89,7 +89,7 @@ def create_ui():
     with gr.Blocks(title="SmartPDF-Science", theme=gr.themes.Soft()) as app:
         gr.Markdown(
             """
-            # 🔬 SmartPDF-Science
+            #  SmartPDF-Science
             ### AI-powered PDF to DOCX/LaTeX/Markdown converter
             
             Upload your PDF and get perfectly formatted documents with formulas recognized!
@@ -99,36 +99,36 @@ def create_ui():
         with gr.Row():
             with gr.Column(scale=1):
                 pdf_input = gr.File(
-                    label="📁 Upload PDF",
+                    label=" Upload PDF",
                     file_types=[".pdf"]
                 )
                 
                 output_format = gr.Radio(
                     choices=["docx", "md", "tex", "html"],
                     value="docx",
-                    label="📝 Output Format"
+                    label=" Output Format"
                 )
                 
                 use_llm = gr.Checkbox(
-                    label="🤖 Use AI Correction (Qwen3-8B)",
+                    label=" Use AI Correction (Qwen3-8B)",
                     value=False,
                     info="Slower but better quality"
                 )
                 
-                submit_btn = gr.Button("🚀 Process", variant="primary", size="lg")
+                submit_btn = gr.Button(" Process", variant="primary", size="lg")
             
             with gr.Column(scale=1):
                 stats_output = gr.Textbox(
-                    label="📊 Statistics",
+                    label=" Statistics",
                     lines=2
                 )
                 
                 file_output = gr.File(
-                    label="💾 Download Result"
+                    label=" Download Result"
                 )
                 
                 preview_output = gr.Textbox(
-                    label="👀 Markdown Preview",
+                    label=" Markdown Preview",
                     lines=15,
                     max_lines=20
                 )
@@ -143,11 +143,11 @@ def create_ui():
             """
             ---
             **Features:**
-            - 🔥 GPU-accelerated OCR with PaddleOCR
-            - 🧮 LaTeX formula recognition
-            - 🤖 Optional AI text correction with Qwen3-8B
-            - 📊 Table extraction
-            - 🖼️ Image preservation
+            -  GPU-accelerated OCR with PaddleOCR
+            -  LaTeX formula recognition
+            -  Optional AI text correction with Qwen3-8B
+            -  Table extraction
+            -  Image preservation
             """
         )
     

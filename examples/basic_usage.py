@@ -22,7 +22,7 @@ def main():
     pdf_path = "input_pdfs/sample.pdf"
     
     if not Path(pdf_path).exists():
-        print(f"❌ Error: {pdf_path} not found")
+        print(f" Error: {pdf_path} not found")
         print("Please place a PDF file in input_pdfs/sample.pdf")
         return
     
@@ -43,7 +43,7 @@ def main():
     
     print()
     print("=" * 50)
-    print("✅ Done! Check the output directory.")
+    print("Done! Check the output directory.")
     print("=" * 50)
 
 

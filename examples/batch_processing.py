@@ -47,7 +47,7 @@ def main():
     pdf_files = list(input_dir.glob("*.pdf"))
     
     if not pdf_files:
-        print(f"❌ No PDF files found in {input_dir}")
+        print(f" No PDF files found in {input_dir}")
         return
     
     print(f"Found {len(pdf_files)} PDF files")
@@ -77,7 +77,7 @@ def main():
             if result["status"] == "success":
                 print(f"✓ {result['file']}: {result['pages']} pages in {result['time']:.1f}s")
             else:
-                print(f"❌ {result['file']}: {result['error']}")
+                print(f" {result['file']}: {result['error']}")
     
     print()
     print("=" * 50)

@@ -1,4 +1,4 @@
-# 🔬 SmartPDF-Science
+# SmartPDF-Science
 
 > AI-powered PDF to DOCX/LaTeX/Markdown converter with GPU acceleration, formula recognition, and LLM post-processing for scientific documents
 
@@ -8,15 +8,15 @@
 
 ## ✨ Features
 
-- 🚀 **GPU-Accelerated OCR** - PaddleOCR-VL with CUDA support
-- 📐 **Formula Recognition** - Convert mathematical formulas to LaTeX (PP-FormulaNet)
-- 🤖 **AI Post-Processing** - Qwen3-8B for intelligent text correction
-- 📄 **Multi-Format Export** - DOCX, Markdown, LaTeX, HTML, PDF
-- 🎨 **Web Interface** - Easy-to-use Gradio UI
-- 🔌 **REST API** - FastAPI endpoints for integration
+- **GPU-Accelerated OCR** - PaddleOCR-VL with CUDA support
+- **Formula Recognition** - Convert mathematical formulas to LaTeX (PP-FormulaNet)
+- **AI Post-Processing** - Qwen3-8B for intelligent text correction
+- **Multi-Format Export** - DOCX, Markdown, LaTeX, HTML, PDF
+- **Web Interface** - Easy-to-use Gradio UI
+- **REST API** - FastAPI endpoints for integration
 - 🇷🇺🇬🇧 **Multi-Language** - Russian and English support
 
-## 🎯 Use Cases
+## Use Cases
 
 - Scientific papers and research articles
 - Technical documentation with formulas
@@ -24,7 +24,7 @@
 - Patents and technical reports
 - Mixed language documents
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 PDF Input
@@ -48,7 +48,7 @@ PDF Input
     └─ PDF (via LaTeX compilation)
 ```
 
-## 📋 Requirements
+## Requirements
 
 ### Hardware
 - **GPU**: NVIDIA RTX 3080+ (20GB VRAM recommended)
@@ -60,7 +60,7 @@ PDF Input
 - CUDA 12.6+
 - cuDNN 9.0+
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Environment Setup
 
@@ -93,7 +93,7 @@ python src/api/fastapi_app.py
 
 API docs at `http://localhost:8000/docs`
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### Python API
 
@@ -131,7 +131,7 @@ smartpdf convert input.pdf --format docx \
     --llm-correction aggressive
 ```
 
-## 🎛️ Configuration
+## Configuration
 
 Edit `configs/default.yaml`:
 
@@ -157,7 +157,7 @@ output:
   preserve_layout: true
 ```
 
-## 📊 Performance
+## Performance
 
 | Document Type | Pages/min | GPU Usage | Accuracy |
 |---------------|-----------|-----------|----------|
@@ -167,7 +167,7 @@ output:
 
 *Tested on RTX 3080 20GB*
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 SmartPDF-Science/
@@ -201,7 +201,7 @@ SmartPDF-Science/
 └── README.md
 ```
 
-## 🔧 Development
+## Development
 
 ```bash
 # Install dev dependencies
@@ -218,7 +218,7 @@ ruff check src/
 mypy src/
 ```
 
-## 🐳 Docker
+## Docker
 
 ```bash
 # Build image
@@ -228,7 +228,7 @@ docker build -t smartpdf-science .
 docker run --gpus all -p 7860:7860 smartpdf-science
 ```
 
-## 📚 Models
+## Models
 
 ### PaddleOCR-VL
 - **Source**: [HuggingFace](https://huggingface.co/PaddlePaddle/PaddleOCR-VL)
@@ -245,21 +245,21 @@ docker run --gpus all -p 7860:7860 smartpdf-science
 - **Size**: 8.2B parameters
 - **Features**: Thinking mode, multi-language
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
-## 📝 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [PaddlePaddle](https://github.com/PaddlePaddle) - OCR engine
 - [Qwen Team](https://github.com/QwenLM) - LLM models
 - Original PDF2MD_Paddle project
 
-## 📧 Contact
+## Contact
 
 Created by [@Vittall13](https://github.com/Vittall13)
 
