@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "smartpdf-science"
 version = "0.1.0"
 description = "AI-powered PDF to DOCX/LaTeX/Markdown converter with GPU acceleration"
-authors = [{name = "Vitall_R", email = ""}]
+authors = [{name = "Vittall13", email = "vittall.rom@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}

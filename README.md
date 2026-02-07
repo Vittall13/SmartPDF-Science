@@ -6,7 +6,7 @@
 [![CUDA 12.6](https://img.shields.io/badge/CUDA-12.6-green.svg)](https://developer.nvidia.com/cuda-downloads)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## ✨ Features
+##  Features
 
 - **GPU-Accelerated OCR** - PaddleOCR-VL with CUDA support
 - **Formula Recognition** - Convert mathematical formulas to LaTeX (PP-FormulaNet)

@@ -34,7 +34,7 @@ def process_pdf(
         if ocr_engine is None:
             progress(0.1, desc="Loading OCR engine...")
             ocr_engine = SmartOCREngine(
-                use_formula_recognition=True,
+                use_formula_recognition=False,               #True,
                 device="gpu:0"
             )
         

@@ -46,8 +46,10 @@ class SmartOCREngine:
         
         # Add formula recognition if enabled
         if use_formula_recognition:
-            self.config["formula_recognition_model_name"] = formula_model
+            self.config["use_formula_recognition"] = True
             logger.info(f"Formula recognition enabled: {formula_model}")
+        else:
+            logger.info("Formula recognition disabled")
         
         self.vl = PaddleOCRVL(**self.config)
         

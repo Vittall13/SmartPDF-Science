@@ -4,7 +4,7 @@
 ocr:
   device: "gpu:0"  # gpu:0, cpu
   use_layout_detection: true
-  use_formula_recognition: true
+  use_formula_recognition: false         #true
   formula_model: "PP-FormulaNet_plus-L"  # Best accuracy
   use_doc_orientation_classify: true
   use_doc_unwarping: false  # Slower but handles curved documents
